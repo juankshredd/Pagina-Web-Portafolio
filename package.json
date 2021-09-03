@@ -4,7 +4,11 @@
   "description": "pagina de portafolio personal",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "passport": "^0.4.1"
   },
   "devDependencies": {},
   "scripts": {
