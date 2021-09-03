@@ -46,7 +46,7 @@
 const express= require('express');
 const app= express();
 
-app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 
 app.get("/", (req,res)=>{
     // si se inicia sesion muestra
