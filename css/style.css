@@ -147,18 +147,29 @@ h1, h2, h3 {
 }
 
 .formulario {
-    display: flex;    /*estas lineas aliniean vetical y horizontalmente */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background-color: var(--gris);
+    margin: 0 auto;
+    width: min(60rem, 100%); /**se utiliza el valor minimo**/
 }
 
-.servicios {
+.formulario fieldset {
+    border: none;
+}
 
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .servicios h3 {
+    color: var(--secundario);
+    font-weight: bold;
+    text-align: center;
+}
 
+.servicio p {
+    line-height: 2;
 }
 .servicio .iconos {
     height: 15rem;
