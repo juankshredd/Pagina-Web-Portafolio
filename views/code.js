@@ -1,10 +1,10 @@
-// const http= require('http');
+const http= require('http');
 
-// const server= http.createServer((req, res) => {
-//     res.status = 200;
-//     res.setHeader('Content-Type', 'text/plain');
-//     res.end('Hello World');
-// });
+const server= http.createServer((req, res) => {
+    res.status = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello World');
+});
 
 // server.listen(3000, () => {
 //     console.log("server on port 3000");
@@ -44,10 +44,41 @@
 // });
 
 const express= require('express');
+const passport= require('passport');
+const cookieParser= require('cookie-parser');
+const session= require('express-session');
+const passportLocal= require('passport-local').Strategy;
 const app= express();
 
-app.set('view engine', 'ejs');
+app.use(express.urlencoded({extended:true}));
 
+app.use(cookieParser('Mi Secreto'));
+
+app.use(session({
+    secret: 'Mi Secreto',
+    resave: true,
+    saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.set('view engine', 'ejs');
+app.use(passport.session());
+
+passport.use(new passportLocal(function(username,password,done){
+    if(username === "Juank" && password === "Juank1")
+    return done(null, {id:1, name:"Juank"})
+
+    done(null,false);
+}));
+
+
+passport.serializeUser(function(user,done)){
+    done(null,user.id);
+}
+
+passport.deserializeUser(function(id,done)){
+    done(null,{id:1, name:"Juank"});
+}
 app.get("/", (req,res)=>{
     // si se inicia sesion muestra
     
@@ -61,10 +92,10 @@ app.get("/login", (req,res)=>{
     res.render("login");
 });
 
-app.post("/login", (req, res)=>{
+app.post("/login", passport.authenticate({
     // recibir credenciales para inicar sesion 
     
-});
+}));
 
-app.listen(3000, ()=> console.log("Server Started On Port 3000"));
+app.listen(8080, ()=> console.log("Server Started On Port 8080"));
 
