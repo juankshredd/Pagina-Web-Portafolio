@@ -96,29 +96,30 @@
             <form class="formulario">
                 <fieldset>
                     <legend>Contactame llenando los campos</legend>
+                    <div class="contenedor-campos">
+                        <div class="campo">
+                            <label>Nombre:</label>
+                            <input class="input-text" type= "text" placeholder= "Tu nombre aqui">
+                        </div>
 
-                    <div>
-                        <label>Nombre:</label>
-                        <input type= "text" placeholder= "Tu nombre aqui">
-                    </div>
+                        <div class="campo">
+                            <label>Numero de contacto:</label>
+                            <input class="input-text" type= "tel" placeholder= "Tu numero aqui">
+                        </div>
 
-                    <div>
-                        <label>Numero de contacto:</label>
-                        <input type= "tel" placeholder= "Tu numero aqui">
-                    </div>
+                        <div class="campo">
+                            <label>Correo electronico:</label>
+                            <input class="input-text" type= "email" placeholder= "Tu mail aqui">
+                        </div>
 
-                    <div>
-                        <label>Correo electronico:</label>
-                        <input type= "email" placeholder= "Tu mail aqui">
-                    </div>
-
-                    <div>
-                        <label>Mensaje:</label>
-                        <textarea placeholder= "Tu mensaje aqui"></textarea>
-                    </div>
-                    <div>
-                        <input type= "submit" value= "Enviar"
-                    </div>
+                        <div class="campo">
+                            <label>Mensaje:</label>
+                            <textarea class="input-text" placeholder= "Tu mensaje aqui"></textarea>
+                        </div>
+                        <div class="alinear-derecha flex">
+                            <input class="w-100" type= "submit" value= "Enviar"
+                        </div>
+                    </div> <!--contenedor de los campos-->
                     
                     
                 </fieldset>
@@ -126,7 +127,7 @@
         </section>
     </main>
         
-        <footer>
+        <footer class="footer">
             <p>Todos los derechos Reservados Juan Carlos Bohorquez Marcelo</p>
         </footer>
 </body>

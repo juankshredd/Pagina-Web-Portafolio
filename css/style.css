@@ -10,8 +10,9 @@
 }
 /*Globales*/
 html {
-    font-size: 62.5%; /*indispensables en*/
+    font-size: 62.5%; /*no cambiar configura con *, *:before y *:after */
     box-sizing: border-box;
+    scroll-snap-type: y mandatory; /*scroll en eje Y */
 }
 
 *, *:before, *:after {  /*esta linea hace que los border no afecten tamaños*/
@@ -61,7 +62,38 @@ h1, h2, h3 {
     border-radius: 0.5rem;
     width: 90%;
     text-align: center;
+    border: none;
 }
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.w-100 {
+    width: 100%;
+    padding: 1.5rem;
+    background-color: var(--secundario);
+    border: none;
+    color: var(--blanco);
+    font-weight: bold;
+    border-radius: 0.5rem;
+    
+}
+
+@media (min-width:768px) {
+    .w-100 {
+        width: auto;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.alinear-derecha {
+    justify-content: flex-end;
+}
+
 
 
 .titulo span {
@@ -136,6 +168,13 @@ h1, h2, h3 {
 .contenido-banner p {
     color: var(--blanco);
 }
+/**scroll snapping**/
+.servicios,
+.navegacionPrincipal,
+.formulario {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
 
 /*servicios*/
 @media (min-width: 768px) {
@@ -148,12 +187,23 @@ h1, h2, h3 {
 
 .formulario {
     background-color: var(--gris);
+    padding: 2rem;
+    border-radius: 2rem;
     margin: 0 auto;
     width: min(60rem, 100%); /**se utiliza el valor minimo**/
 }
 
 .formulario fieldset {
     border: none;
+}
+
+.formulario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--primario);
 }
 
 .servicio {
@@ -180,4 +230,36 @@ h1, h2, h3 {
     justify-content: space-evenly;
     align-items: center;
 }
+
+.contenedor-campos {
+
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.campo textarea {
+    height: 20rem;
+}
+
+.input-text {
+    width: 100%;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 1.5rem;
+}
+
+.footer {
+    text-align: center;
+    color: var(--blanco);
+}
+
 
